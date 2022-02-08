@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive pricing component</title>
+  <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+
+</head>
+
+<body>
+
+  <main>
+
+    <header>
+      <h1>Simple, traffic-based pricing</h1>
+      <p>Sign-up for our 30-day trial. No credit card required.</p>
+    </header>
+
+    <div class="card-price">
+      <div class="set-price">
+        <p><span>0</span> Pageviews</p>
+        <p>$<span>0</span> <span>/ month</span></p>
+        <form name="range-price">
+          <input type="range" min="0" max="4" step="1" name="pagewiews">
+        </form>
+        <div>
+          <p>Monthly Billing</p>
+          <form>
+            <label for="period">
+              <input type="checkbox" name="period" id="period" />
+              <div>
+                <span></span>
+              </div>
+            </label>
+          </form>
+          <p>Yearly Billing <span>25% discount</span></p>
+        </div>
+      </div>
+      <div class="action">
+        <ul>
+          <li>
+            Unlimited websites
+          </li>
+          <li>
+            100% data ownership
+          </li>
+          <li>
+            Email reports
+          </li>
+        </ul>
+        <div class="wrap-button">
+          <a href="#">Start my trial</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        rel="noopener noreferrer">Frontend Mentor</a>.
+      Coded by <a href="https://cholis04.github.io" target="_blank" rel="noopener noreferrer">cholis04</a>.
+    </div>
+  </footer>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
