@@ -15,6 +15,7 @@
 
 <body>
 
+  <!-- Main Content -->
   <main>
 
     <header>
@@ -24,12 +25,12 @@
 
     <div class="card-price">
       <div class="set-price">
-        <p><span>0</span> Pageviews</p>
-        <p>$<span>0</span> <span>/ month</span></p>
+        <p><span id="views">100</span>K Pageviews</p>
+        <p><span id="price">$16.00</span> <span>/ month</span></p>
         <form name="range-price">
           <input type="range" min="0" max="4" step="1" name="pagewiews" id="pagewiews">
         </form>
-        <div>
+        <div class="period-select">
           <p>Monthly Billing</p>
           <form>
             <label for="period">
@@ -39,9 +40,10 @@
               </div>
             </label>
           </form>
-          <p>Yearly Billing <span>25% discount</span></p>
+          <p>Yearly Billing <span class="discount">25% discount</span></p>
         </div>
       </div>
+      <hr />
       <div class="action">
         <ul>
           <li>
@@ -62,6 +64,7 @@
 
   </main>
 
+  <!-- Footer Attribution -->
   <footer>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
@@ -70,7 +73,8 @@
     </div>
   </footer>
 
-  <script src="./index.js"></script>
+  <!-- Script -->
+  <!-- <script src="./index.js"></script> -->
 </body>
 
 </html>
