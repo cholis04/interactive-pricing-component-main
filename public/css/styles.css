@@ -228,7 +228,7 @@ main .card-price > .set-price > .period-select > form > label {
   justify-content: center;
   cursor: pointer;
 }
-main .card-price > .set-price > .period-select > form > label > div {
+main .card-price > .set-price > .period-select > form > label > span.box-check {
   position: relative;
   width: 46px;
   height: 24px;
@@ -241,12 +241,25 @@ main .card-price > .set-price > .period-select > form > label > div {
 }
 
 @media (hover: hover) {
-  main .card-price > .set-price > .period-select > form > label:hover > div {
+  main
+    .card-price
+    > .set-price
+    > .period-select
+    > form
+    > label:hover
+    > span.box-check {
     background-color: var(--soft-cyan);
   }
 }
 
-main .card-price > .set-price > .period-select > form > label > div > span {
+main
+  .card-price
+  > .set-price
+  > .period-select
+  > form
+  > label
+  > span.box-check
+  > span {
   position: absolute;
   display: block;
   width: 16px;
@@ -263,7 +276,7 @@ main
   > form
   > label
   > input[type='checkbox']:checked
-  + div
+  + span.box-check
   > span {
   transform: translateX(22px);
 }
@@ -275,7 +288,7 @@ main
   > form
   > label
   > input[type='checkbox']:checked
-  + div {
+  + span.box-check {
   background-color: var(--strong-cyan);
 }
 
