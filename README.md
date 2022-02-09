@@ -82,25 +82,25 @@ main .card-price > .action > ul {
 
 ```css
 input[type='range'] {
-  /* Styels */
+  /* Styles */
 }
 input[type='range']::-webkit-slider-thumb {
-  /* Styels */
+  /* Styles */
 }
 input[type='range']::-webkit-slider-thumb:hover {
-  /* Styels */
+  /* Styles */
 }
 input[type='range']::-webkit-slider-thumb:active {
-  /* Styels */
+  /* Styles */
 }
 input[type='range']::-webkit-slider-runnable-track {
-  /* Styels */
+  /* Styles */
 }
 input[type='range']::-moz-range-progress {
-  /* Styels */
+  /* Styles */
 }
 input[type='range']::-ms-fill-lower {
-  /* Styels */
+  /* Styles */
 }
 ```
 
