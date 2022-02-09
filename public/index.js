@@ -3,7 +3,6 @@
 const inputRange = document.querySelector('#pageviews');
 const inputCheck = document.querySelector('#period');
 const spanViews = document.querySelector('#views');
-const spanTimePeriod = document.querySelector('#time-period');
 const spanPrice = document.querySelector('#price');
 // Values
 const percentDiscountYearly = 25;
@@ -44,14 +43,7 @@ window.onload = () => {
         spanViews.innerText = views[target.valueAsNumber];
         renderPrice();
     });
-    inputCheck.addEventListener('change', (event) => {
-        const target = event.target;
-        if (target.checked) {
-            spanTimePeriod.innerText = 'yearly';
-        }
-        else {
-            spanTimePeriod.innerText = 'monthly';
-        }
+    inputCheck.addEventListener('change', () => {
         renderPrice();
     });
 };

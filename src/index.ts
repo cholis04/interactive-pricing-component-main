@@ -3,9 +3,6 @@ const inputRange = document.querySelector('#pageviews') as HTMLInputElement;
 const inputCheck = document.querySelector('#period') as HTMLInputElement;
 
 const spanViews = document.querySelector('#views') as HTMLSpanElement;
-const spanTimePeriod = document.querySelector(
-  '#time-period'
-) as HTMLSpanElement;
 const spanPrice = document.querySelector('#price') as HTMLSpanElement;
 
 // Values
@@ -53,13 +50,7 @@ window.onload = () => {
     renderPrice();
   });
 
-  inputCheck.addEventListener('change', (event) => {
-    const target = event.target as HTMLInputElement;
-    if (target.checked) {
-      spanTimePeriod.innerText = 'yearly';
-    } else {
-      spanTimePeriod.innerText = 'monthly';
-    }
+  inputCheck.addEventListener('change', () => {
     renderPrice();
   });
 };
