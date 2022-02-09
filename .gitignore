@@ -16,3 +16,9 @@
 .prettierignore
 
 node_modules/
+
+# Firebase
+.firebase/
+public/404.html
+.firebaserc
+firebase.json

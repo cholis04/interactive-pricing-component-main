@@ -16,8 +16,6 @@ This is a solution to the [Interactive pricing component challenge on Frontend M
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -30,85 +28,162 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Web Capture](./screenshot/Frontend_Mentor_Interactive_pricing_component.gif)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Repository URL: [https://github.com/cholis04/interactive-pricing-component-main](https://github.com/cholis04/interactive-pricing-component-main)
+- Live Site URL: [https://interactive-pricing-fem.web.app/](https://interactive-pricing-fem.web.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
+- Desktop-first workflow
 - CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Flexbox & Grid - Layouting
+- Input type 'Range' & 'Checkbox'
+- [Typescript](https://www.typescriptlang.org/) - For Development JavaScript Compile
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+This is my first project using typescript.
+
+- [Eslint](https://eslint.org/) - For evaluate patterns in code
+- [Prettier](https://prettier.io/) - Formatting on Save
+- [Firebase Hosting](https://firebase.google.com/) - Host Static File
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+#### List Style Image
 
-To see how you can add code snippets, see below:
+![Web Capture](./screenshot/Screenshot_List-Image.jpg)
+
+```css
+main .card-price > .action > ul {
+  list-style-image: url('../images/icon-check.svg');
+}
+```
+
+#### Selection Input type Range / Slider for Styling
+
+![Web Capture](./screenshot/Screenshot_Slider.jpg)
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<input
+  type="range"
+  min="0"
+  max="4"
+  step="1"
+  name="pageviews"
+  id="pageviews"
+  value="2"
+/>
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+input[type='range'] {
+  /* Styels */
+}
+input[type='range']::-webkit-slider-thumb {
+  /* Styels */
+}
+input[type='range']::-webkit-slider-thumb:hover {
+  /* Styels */
+}
+input[type='range']::-webkit-slider-thumb:active {
+  /* Styels */
+}
+input[type='range']::-webkit-slider-runnable-track {
+  /* Styels */
+}
+input[type='range']::-moz-range-progress {
+  /* Styels */
+}
+input[type='range']::-ms-fill-lower {
+  /* Styels */
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+#### Create Toggle from Checkbox
+
+![Web Capture](./screenshot/Screenshot_Checkbox.jpg)
+
+```html
+<label for="period">
+  <input type="checkbox" name="period" id="period" />
+  <span class="box-check">
+    <span></span>
+  </span>
+</label>
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+```css
+label > input[type='checkbox'] {
+  display: none;
+}
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+label > span.box-check {
+  position: relative;
+  width: 46px;
+  height: 24px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  background-color: var(--toggle-background);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+@media (hover: hover) {
+  label:hover > span.box-check {
+    background-color: var(--soft-cyan);
+  }
+}
+
+label > span.box-check > span {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  background-color: var(--white);
+  transition: all 0.2s ease-in-out;
+}
+
+label > input[type='checkbox']:checked + span.box-check > span {
+  transform: translateX(22px);
+}
+
+label > input[type='checkbox']:checked + span.box-check {
+  background-color: var(--strong-cyan);
+}
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Input type range is still not supported in some older browsers. Mainly for applying styles that require a prefix to run well. A combination of JavaScript and CSS is indispensable
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) - This method is very easy to apply. but unfortunately, some old browsers don't support datalist. [https://caniuse.com/?search=datalist](https://caniuse.com/?search=datalist)
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Styling range input with CSS and JavaScript for better UX](https://nikitahl.com/style-range-input-css) - This is an amazing article which helped me finally understand about styling range input with CSS. I'd recommend it to anyone still learning this concept.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Input Range progress with css gradient](https://codepen.io/duplich/pen/qjYQEZ?editors=0100) - This helped me for Create Range Progress with CSS Gradient. I really liked this pattern and will use it going forward.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - [https://cholis04.github.io](https://cholis04.github.io)
+- Frontend Mentor - [@cholis04](https://www.frontendmentor.io/profile/cholis04)
+- Dribbble - [cholis04](https://dribbble.com/cholis04)
+- Instagram - [@cholis04](https://instagram.com/cholis04)
+- Codepen - [cholis04](https://codepen.io/cholis04)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Many thanks to anyone who provided feedback.
