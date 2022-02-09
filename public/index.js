@@ -32,6 +32,15 @@ window.onload = () => {
     };
     inputRange.addEventListener('input', (event) => {
         const target = event.target;
+        target.style.backgroundImage = `
+      linear-gradient(
+        to right,
+        var(--soft-cyan) 0%,
+        var(--soft-cyan) ${target.valueAsNumber * 25}%,
+        var(--empty-bar) ${target.valueAsNumber * 25}%,
+        var(--empty-bar) 100%
+      )
+    `;
         spanViews.innerText = views[target.valueAsNumber];
         renderPrice();
     });

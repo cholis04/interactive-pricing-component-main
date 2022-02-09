@@ -136,6 +136,13 @@ main .card-price > .set-price > form > input[type='range'] {
   cursor: ew-resize;
   border-radius: 50px;
   background-color: var(--empty-bar);
+  background-image: linear-gradient(
+    to right,
+    var(--soft-cyan) 0%,
+    var(--soft-cyan) 50%,
+    var(--empty-bar) 50%,
+    var(--empty-bar) 100%
+  );
 }
 
 main
@@ -230,6 +237,7 @@ main .card-price > .set-price > .period-select > form > label > div {
   align-items: center;
   padding: 2px 4px;
   background-color: var(--toggle-background);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @media (hover: hover) {
@@ -258,6 +266,17 @@ main
   + div
   > span {
   transform: translateX(22px);
+}
+
+main
+  .card-price
+  > .set-price
+  > .period-select
+  > form
+  > label
+  > input[type='checkbox']:checked
+  + div {
+  background-color: var(--strong-cyan);
 }
 
 main
